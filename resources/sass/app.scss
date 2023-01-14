@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100;1,300;1,400&family=Roboto:wght@100;700&display=swap");
+@import "./_variables.scss";
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lato',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    color: $dark;
+}
+
+nav li:last-child a{
+    background-color: $primary;
+    &:hover{
+        background-color:$primary-hover;
+    }
+}
+
+
+nav li a{
+    transition: $smooth;
+    &:hover{
+        color: $primary;
+    }
+}
+
+section.hero{
+    background-color: $secondry;
+}
+
+.Add-to-cart{
+    transition: $smooth;
+    border: 2px solid $primary;
+    color: $primary;
+    &:hover{
+        color: white;
+        background-color: $primary;
+    }
+}
+
+.Btn-primary{
+    transition: $smooth;
+    color: white;
+    background-color: $primary;
+    &:hover{
+        color: $primary;
+        background-color: wheat;
+    }
+}
+
+
+.empty-cart{
+    height: 300px;
+}

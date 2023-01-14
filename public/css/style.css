@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100;1,300;1,400&family=Roboto:wght@100;700&display=swap);
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+nav li:last-child a {
+  background-color: #FE5F1E;
+}
+nav li:last-child a:hover {
+  background-color: #b23301;
+}
+
+nav li a {
+  transition: all 0.3s ease-in-out;
+}
+nav li a:hover {
+  color: #FE5F1E;
+}
+
+section.hero {
+  background-color: #F8F8F8;
+}
+
+.Add-to-cart {
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #FE5F1E;
+  color: #FE5F1E;
+}
+.Add-to-cart:hover {
+  color: white;
+  background-color: #FE5F1E;
+}
+
+.Btn-primary {
+  transition: all 0.3s ease-in-out;
+  color: white;
+  background-color: #FE5F1E;
+}
+.Btn-primary:hover {
+  color: #FE5F1E;
+  background-color: wheat;
+}
+
+.empty-cart {
+  height: 300px;
+}
