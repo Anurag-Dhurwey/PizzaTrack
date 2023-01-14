@@ -1,5 +1,6 @@
 const router= require("express").Router()
 const homePage=require("../controller/homePage")
+const update_cart = require("../controller/update-cart")
 
 
 router.get('/',homePage )
@@ -13,6 +14,8 @@ router.get('/login', (req, res) => {
 router.get('/cart', (req, res) => {
     res.render("cart")
   })
+
+router.post('/update-cart',update_cart)
 
 
 
