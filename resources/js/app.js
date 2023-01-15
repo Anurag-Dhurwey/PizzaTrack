@@ -1,9 +1,11 @@
 import  Axios  from "axios";
 const addToCart = document.querySelectorAll(".Add-to-cart");
+const cart_counter=document.querySelector("#cart-counter");
 
 const updateCart = (itemIs) => {
   Axios.post("/update-cart", itemIs).then((res)=>{
   console.log(res)
+  cart_counter.innerText=res.data.totalQty;
   });
 };
 

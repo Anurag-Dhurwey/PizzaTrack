@@ -5,10 +5,14 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
   color: #232323;
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 nav li:last-child a {

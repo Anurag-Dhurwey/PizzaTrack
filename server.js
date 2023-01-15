@@ -34,6 +34,11 @@ app.use(session({
 app.use(flash());
                 // partials files and path setup 
 app.use(EJSLayout);
+                  // Globel Middileware setup 
+app.use((req,res,next)=>{
+   res.locals.session=req.session;
+   next()
+})
                   // router setup 
 app.use("/",router)
 

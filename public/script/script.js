@@ -12,9 +12,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 
 var addToCart = document.querySelectorAll(".Add-to-cart");
+var cart_counter = document.querySelector("#cart-counter");
 var updateCart = function updateCart(itemIs) {
   axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/update-cart", itemIs).then(function (res) {
     console.log(res);
+    cart_counter.innerText = res.data.totalQty;
   });
 };
 addToCart.forEach(function (btn) {
