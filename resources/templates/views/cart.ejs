@@ -1,7 +1,42 @@
 <section class="py-16">
     
-        <%-include('../partials/customer/cart-items')%>
+        <% if (session.cart) { %>
+        <div class="oeder container mx-auto w-1/2">
+            <div class="flex items-center p-3 border-b border-gray-400 ">
+                <img src="img/cart-black.png" alt="">
+                <h1 class="font-bold text-2xl ml-2">Order summary</h1>
+            </div>
+        
+            <%-include('../partials/customer/cart-items')%>
 
-        <!-- <%-include('../partials/empty-cart')%> -->
+            <div class="text-right border-t mt-5 border-gray-400">
+             <div>
+                 <span>Total Quantity :</span>
+                <span class="font-bold"><%= session.cart.totalQty%></span>
+             </div>
+             <div>
+                 <span>Total amount :</span>
+                 <span class="font-bold"><%= session.cart.totalPrice%></span>
+             </div>
+             
+             <div class="address">
+                 <form action="">
+                     <input class="border rounded-full m-2 first-letter: p-1 w-1/2 border-gray-400" placeholder="address" type="text" name="address">
+                     <input class="border rounded-full m-2 p-1 w-1/2 border-gray-400" placeholder="mobile" type="text" name="mobile">
+                     <br>
+                     <!-- <input class="Btn-primary rounded-full m-2 px-4 py-2" type="submit" value="Checkout"> -->
+                 </form>
+             </div>
+             <div class="m-2">
+                 <a class="Btn-primary rounded-full  px-4 py-2" href="/login">Login to continue</a>
+             </div>
+            </div>
+        </div>
+
+        <% }else {%>
+
+        <%-include('../partials/empty-cart')%>
+
+        <% }%>
         
 </section>

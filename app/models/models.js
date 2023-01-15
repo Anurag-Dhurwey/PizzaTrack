@@ -7,7 +7,7 @@ const blogSchema = new Schema({
     
   },
   price:{
-    type:String
+    type:Number
     
   },
   size:{

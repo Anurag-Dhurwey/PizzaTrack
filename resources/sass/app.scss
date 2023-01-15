@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100;1,300;1,400&family=Roboto:wght@100;700&display=swap");
 @import "./_variables.scss";
+@import '../../node_modules/notie/src/notie';
 
 *{
     margin: 0%;
@@ -59,3 +60,11 @@ section.hero{
 .empty-cart{
     height: 300px;
 }
+
+.notie-container {
+    // color: black;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 0%;
+    
+  }

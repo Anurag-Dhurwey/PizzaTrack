@@ -28,7 +28,7 @@ app.use(session({
   }),
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 1000 * 30 }
+  cookie: { maxAge: 1000 * 60*60 }
 }))
                  // express-flash setup 
 app.use(flash());
