@@ -18,6 +18,7 @@ const template_path=path.join(__dirname,"./resources/templates/views/");
 app.set("view engine","ejs");
 app.set("views",template_path);
 app.use(express.json());
+app.use(express.urlencoded({extended:false}))
                 
                 // express-session setup 
 app.use(session({

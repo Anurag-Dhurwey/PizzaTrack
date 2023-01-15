@@ -4,20 +4,24 @@
           <div>
            <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Register your account</h2>
           </div>
-          <form class="mt-8 space-y-6" action="/register" method="POST">
+          
+          <form class=" " action="/register" method="POST">
             <div class="rounded-md">
               <div>
-                <input id="name" name="name" type="text" autocomplete="off"  class="w-full rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 " placeholder="Name">
+                <div class="h-6"><% if(messages.error) {%>
+                  <span class="text-red-500 text-sm"><%= messages.error%></span>
+                  <%}%></div>
+                <input id="name" name="name" type="text" value="<%= messages.name%>" autocomplete="off"  class="w-full rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 " placeholder="Name">
               </div>
               <div class="mt-4">
-                <input id="email-address" name="email" type="email" autocomplete="off"  class="w-full rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 " placeholder="Email address">
+                <input id="email-address" name="email" type="email" value="<%= messages.email%>" autocomplete="off"  class="w-full rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 " placeholder="Email address">
               </div>
               <div class="mt-4">
                 <input id="password" name="password" type="password" autocomplete="off" class="w-full  rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500" placeholder="Password">
               </div>
             </div>
       
-            <div class="flex items-center justify-around">
+            <div class="flex items-center justify-around mt-5">
                 <button type="submit" class="Btn-primary rounded-full  px-4 py-2">
                     register
                 </button>
