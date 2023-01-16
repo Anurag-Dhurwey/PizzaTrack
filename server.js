@@ -34,32 +34,25 @@ app.use(session({
   cookie: { maxAge: 1000 * 60*60 }
 }))
 
+                // login config using passport 
+const passportInit=require("./app/config/passport");
+passportInit(passport)
+app.use(passport.initialize()) ;
+app.use(passport.session()); 
+        
             // Globel Middileware setup 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 app.use(flash()); // express-flash setup 
 app.use((req,res,next)=>{
     res.locals.session=req.session;
+    res.locals.user=req.user;
     next()
 })
-
-                     // login config using passport 
-const passportInit=require("./app/config/passport");
-passportInit(passport)
-app.use(passport.initialize()) ;
-app.use(passport.session()); 
-        
-                    
-
 
 
                   // router setup 
 app.use("/",router)
-
-
-
-
-
 
 
 

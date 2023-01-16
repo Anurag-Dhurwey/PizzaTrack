@@ -20,8 +20,12 @@
             <ul class="flex  item-center">
                 <li class="mx-6"><a href="/">Home</a></li>
                 <li class="mx-6"><a href="/offer">Offer</a></li>
-                <li class="mx-6"><a href="/register">Register</a></li>
-                <li class="mx-6"><a href="/login">Login</a></li>
+                <% if(user){%>
+                    <li class="mx-6"><a href="/logout">Logout</a></li>
+                <% }else{%>
+                    <li class="mx-6"><a href="/register">Register</a></li>
+                    <li class="mx-6"><a href="/login">Login</a></li>
+                <% }%>
                 <li class="mx-6"><a href="/cart" class="px-4 py-2 rounded-full flex items-center ">
                     <span id="cart-counter" class="text-white pr-1 font-bold"><%= session.cart?session.cart.totalQty:''%></span>
                     <img src="img/cart.png" alt="cart">

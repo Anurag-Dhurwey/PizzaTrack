@@ -41,3 +41,6 @@ addToCart.forEach((btn) => {
     console.log(itemIs)
   });
 });
+
+
+
