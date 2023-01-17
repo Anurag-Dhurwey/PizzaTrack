@@ -10,26 +10,33 @@
             <%-include('../partials/customer/cart-items')%>
 
             <div class="text-right border-t mt-5 border-gray-400">
-             <div>
+            
                  <span>Total Quantity :</span>
-                <span class="font-bold"><%= session.cart.totalQty%></span>
-             </div>
-             <div>
-                 <span>Total amount :</span>
+                <span class="font-bold "><%= session.cart.totalQty%></span >
+            
+           
+                 <span class="pl-40">Total amount :</span>
                  <span class="font-bold"><%= session.cart.totalPrice%></span>
-             </div>
              
+             <%if(user){%>
              <div class="address">
-                 <form action="">
-                     <input class="border rounded-full m-2 first-letter: p-1 w-1/2 border-gray-400" placeholder="address" type="text" name="address">
+                 <form action="/order" method="post">
+                    <div class="h-6">
+                        <% if(messages.error) {%>
+                            <p class="text-red-500 text-sm pr-52"><%= messages.error%></p>
+                            <%}%>
+                    </div>
+                     <input class="border rounded-full  mx-2 first-letter: p-1 w-1/2 border-gray-400" placeholder="address" type="text" name="address">
                      <input class="border rounded-full m-2 p-1 w-1/2 border-gray-400" placeholder="mobile" type="text" name="mobile">
                      <br>
-                     <!-- <input class="Btn-primary rounded-full m-2 px-4 py-2" type="submit" value="Checkout"> -->
+                     <input class="Btn-primary rounded-full m-2 px-4 py-2" type="submit" value="Checkout">
                  </form>
              </div>
+             <% }else{%>
              <div class="m-2">
                  <a class="Btn-primary rounded-full  px-4 py-2" href="/login">Login to continue</a>
              </div>
+             <%}%>
             </div>
         </div>
 

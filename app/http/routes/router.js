@@ -5,8 +5,9 @@ const update_cart = require("../controller/cart/update-cart");
 const {register,postRegister} = require("../controller/auth/register");
 const { login, postLogin } = require("../controller/auth/login");
 const guest = require("../middlewares/guest");
+const auth=require("../middlewares/auth");
 const logout = require("../controller/auth/logout");
-
+const {order,postOrder}=require("../controller/order/order");
 
 router.get('/',homePage );
                // when user will regiter over selves
@@ -17,6 +18,9 @@ router.get('/login',guest,login );
 router.post('/login',postLogin );
                 // logout user 
 router.get("/logout",logout)
+                // order section of user 
+router.get('/orders',auth,order);
+router.post('/orders',auth,postOrder);
                 // cart section of user 
 router.get('/cart',cartPage);
 
